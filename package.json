@@ -1,0 +1,69 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "description": "A simple to-do app build with reactjs and typescript",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y0na4an/to-do.git"
+  },
+  "scripts": {
+    "bundle": "webpack",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "check-types": "tsc"
+  },
+  "keywords": [
+    "to-do",
+    "to do"
+  ],
+  "author": "\"Yonatan Fessehaye\"",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/y0na4an/to-do/issues"
+  },
+  "homepage": "https://github.com/y0na4an/to-do#readme",
+  "dependencies": {
+    "path": "^0.12.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "webpack": "^4.41.2",
+    "html-webpack-plugin": "^3.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.3.2",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-template": "^6.2.0",
+    "prettier": "^1.19.1",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.1",
+    "ts-loader": "^6.2.1",
+    "tslint": "^5.20.1",
+    "tslint-immutable": "^6.0.1",
+    "typescript": "^3.7.3",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
