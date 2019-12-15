@@ -8,7 +8,7 @@ const App: React.FunctionComponent = () => {
   const [toDoList, setToDoList] = useState(0);
   return (
     <Provider value={{ toDoList, setToDoList }}>
-      <List name="Todo-lists" />
+      <List />
     </Provider>
   );
 };

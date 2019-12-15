@@ -1,26 +1,14 @@
 /* eslint-disable import/extensions */
-import React, { useContext } from 'react';
-import { ToDoStore } from '../../store/index';
+import React from 'react';
+import { useToDoContext } from '../../store/index';
 
-interface ListProps {
-  name: string;
-}
-
-const List: React.FunctionComponent<ListProps> = (props: ListProps) => {
-  const { name } = props;
-
-  const { toDoList, setToDoList } = useContext(ToDoStore) as {
-    toDoList: number;
-    setToDoList: React.Dispatch<React.SetStateAction<number>>;
-  };
+const List: React.FunctionComponent = () => {
+  const { toDoList, setToDoList } = useToDoContext();
   return (
     <div id="to-do-lists">
-React, Ts, webpack, and initial
-      {name}
-      {' '}
-working.
+        ToDo
       {toDoList}
-      <button onClick={() => setToDoList(toDoList + 1)}>Add Number</button>
+      <button onClick={() => setToDoList(toDoList + 1)}>Add</button>
     </div>
   );
 };
