@@ -5,9 +5,14 @@ import List from './components/List/List';
 import { Provider } from './store/index';
 
 const App: React.FunctionComponent = () => {
-  const [toDoList, setToDoList] = useState(0);
+  const [toDoList, setToDoList] = useState([]);
+  const toDo = (value: string): any => setToDoList([{ value }, ...toDoList]);
+  const removeToDo = (): any => { };
   return (
-    <Provider value={{ toDoList, setToDoList }}>
+    <Provider value={{
+      toDoList, setToDoList: toDo, removeToDo,
+    }}
+    >
       <List />
     </Provider>
   );
