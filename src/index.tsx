@@ -7,7 +7,17 @@ import { Provider } from './store/index';
 const App: React.FunctionComponent = () => {
   const [toDoList, setToDoList] = useState([]);
   const toDo = (value: string): any => setToDoList([{ value }, ...toDoList]);
-  const removeToDo = (): any => { };
+  const removeToDo = (value: string): any => {
+    const tmpToDoList: {value: string}[] = [];
+    setToDoList((oldList: {value: string}[]) => {
+      oldList.forEach((el: {value: string}) => {
+        if (el.value !== value) {
+          tmpToDoList.push(el);
+        }
+      });
+      return tmpToDoList;
+    });
+  };
   return (
     <Provider value={{
       toDoList, setToDoList: toDo, removeToDo,
