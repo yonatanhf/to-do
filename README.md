@@ -5,6 +5,7 @@
 - [About](#general-info)
 - [Technologies](#technologies)
 - [Setup](#setup)
+- [Demo](#Demo)
 
 ## General info
 
@@ -29,3 +30,7 @@ $ npm build
 $ npm run lint
 $ npm run lint:fix
 ```
+
+## Demo
+
+[Live App](https://infallible-hypatia-825bb2.netlify.com)
