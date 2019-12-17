@@ -52,6 +52,7 @@
 }
 .todo-element-label-in:hover{
     text-decoration:underline;
+    cursor: pointer;
 }
 #todo-list-options{
     display: grid;

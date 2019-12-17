@@ -4,13 +4,16 @@ import ReactDOM from 'react-dom';
 import List from './components/List/List';
 import { Provider } from './store/index';
 
+interface ToDoType {
+  value: string; completed: boolean;
+}
 const App: React.FunctionComponent = () => {
   const [toDoList, setToDoList] = useState([]);
-  const toDo = (value: string): any => setToDoList([{ value }, ...toDoList]);
+  const toDo = (value: string): any => setToDoList([{ value, completed: false }, ...toDoList]);
   const removeToDo = (value: string): any => {
-    const tmpToDoList: {value: string}[] = [];
-    setToDoList((oldList: {value: string}[]) => {
-      oldList.forEach((el: {value: string}) => {
+    const tmpToDoList: ToDoType[] = [];
+    setToDoList((oldList: ToDoType[]) => {
+      oldList.forEach((el: ToDoType) => {
         if (el.value !== value) {
           tmpToDoList.push(el);
         }
@@ -18,9 +21,22 @@ const App: React.FunctionComponent = () => {
       return tmpToDoList;
     });
   };
+
+
+  const setToDoComplete = (value: any) => {
+    const tmpToDoList: ToDoType[] = [];
+    setToDoList((oldList: ToDoType[]) => {
+      oldList.forEach((el: ToDoType) => {
+        if (el.value !== value) {
+          tmpToDoList.push(el);
+        } else { tmpToDoList.push({ value: el.value, completed: true }); }
+      });
+      return tmpToDoList;
+    });
+  };
   return (
     <Provider value={{
-      toDoList, setToDoList: toDo, removeToDo,
+      toDoList, setToDoList: toDo, removeToDo, setToDoComplete,
     }}
     >
       <List />
