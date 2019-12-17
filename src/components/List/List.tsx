@@ -10,9 +10,12 @@ interface Element {
 }
 
 const ToDoElement: React.FC<Element> = ({ value, onDelete }: Element) => (
-  <div>
-    {value}
-    {' '}
+  <div className="todo-element">
+    <span className="todo-element-label">
+      {' '}
+i
+      {value}
+    </span>
     <Button id={value} label="X" onclick={(): any => { onDelete(value); }} />
   </div>
 );
