@@ -20,7 +20,37 @@
     display: grid;
     grid-template-columns: 9fr 1fr;   
 }
-.todo-element-label:hover{
+@keyframes slidein {
+    from {
+      margin-left: 80px;
+      width: 80px; 
+    }
+  
+    to {
+      margin-left: 0px;
+      width: 0px;
+    }
+}
+@keyframes slideout {
+    from {
+      margin-left: 0px;
+      width: 0px;
+    }
+    to {
+      margin-left: 80px;
+      width: 80px; 
+    }
+  
+}
+.todo-element-label-in {
+    animation-duration: 0.5s;
+    animation-name:slidein;
+}
+.todo-element-label-out {
+    animation-duration: 0.5s;
+    animation-name:slideout;
+}
+.todo-element-label-in:hover{
     text-decoration:underline;
 }
 #todo-list-options{
@@ -29,6 +59,7 @@
     padding-top: 2%;
     grid-column-gap: 3%;
 }
+
 input {
     height: 24px;
     border-radius: 10px;

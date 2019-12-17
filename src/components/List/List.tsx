@@ -9,16 +9,21 @@ interface Element {
   onDelete: Function;
 }
 
-const ToDoElement: React.FC<Element> = ({ value, onDelete }: Element) => (
-  <div className="todo-element">
-    <span className="todo-element-label">
-      {' '}
-i
-      {value}
-    </span>
-    <Button id={value} label="X" onclick={(): any => { onDelete(value); }} />
-  </div>
-);
+const ToDoElement: React.FC<Element> = ({ value, onDelete }: Element) => {
+  const [deleteStatus, setDeleteStatus] = useState(false);
+  return (
+    <div className="todo-element">
+      <span className={deleteStatus === false ? 'todo-element-label-in' : 'todo-element-label-out'}>
+        <span>
+          {' '}
+          {value}
+          {' '}
+        </span>
+      </span>
+      <Button id={value} label="X" onclick={(): any => { setDeleteStatus(true); setTimeout(() => onDelete(value), 500); }} />
+    </div>
+  );
+};
 
 const List: React.FunctionComponent = () => {
   const {
