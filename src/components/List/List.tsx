@@ -24,14 +24,20 @@ const List: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = useState('');
   return (
     <div id="to-do-lists">
-      <input type="text" id="todo-input" value={inputValue} onChange={(e: React.ChangeEvent<HTMLInputElement>): any => { setInputValue(e.target.value); }} />
-      <Button id="add-list-button" label="Add" onclick={(): any => { setToDoList(inputValue); setInputValue(''); }} />
-      {toDoList.length > 0 && toDoList.map((el: Element) => (
-        <ToDoElement key={el.value} value={el.value} onDelete={removeToDo} />
-      ))}
-      <Button id="all-list-button" label="All" onclick={() => {}} />
-      <Button id="complete-list-button" label="Complete" onclick={() => {}} />
-      <Button id="incomplete-list-button" label="Incomplete" onclick={() => {}} />
+      <div id="input-elements">
+        <input type="text" id="todo-input" value={inputValue} onChange={(e: React.ChangeEvent<HTMLInputElement>): any => { setInputValue(e.target.value); }} />
+        <Button id="add-list-button" label="Add" onclick={(): any => { setToDoList(inputValue); setInputValue(''); }} />
+      </div>
+      <div id="todo-list-elements">
+        {toDoList.length > 0 && toDoList.map((el: Element) => (
+          <ToDoElement key={el.value} value={el.value} onDelete={removeToDo} />
+        ))}
+      </div>
+      <div id="todo-list-options">
+        <Button id="all-list-button" label="All" onclick={() => {}} />
+        <Button id="complete-list-button" label="Complete" onclick={() => {}} />
+        <Button id="incomplete-list-button" label="Incomplete" onclick={() => {}} />
+      </div>
     </div>
   );
 };
