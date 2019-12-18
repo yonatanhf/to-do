@@ -1,17 +1,18 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React, { createContext, useContext } from 'react';
 
-interface ListType {
-  [index: number]: { value: string; complete: boolean };
+interface ToDoType {
+  value: string; completed: boolean;
 }
 const ToDoStore = createContext({});
 const { Provider } = ToDoStore;
 
-const useToDoContext: any = () => useContext(ToDoStore) as {
-  toDoList: ListType;
-  setToDoList: React.Dispatch<React.SetStateAction<ListType>>;
-  removeToDo: React.Dispatch<React.SetStateAction<ListType>>;
-  setToDoComplete: React.Dispatch<React.SetStateAction<ListType>>;
+const useToDoContext = () => useContext(ToDoStore) as {
+  toDoList: ToDoType[];
+  setToDoList: React.Dispatch<React.SetStateAction<ToDoType[]>>;
+  removeToDo: React.Dispatch<React.SetStateAction<ToDoType[]>>;
+  setToDoComplete: React.Dispatch<React.SetStateAction<ToDoType[]>>;
   show: string;
-  showToDos: React.Dispatch<React.SetStateAction<ListType>>;
+  showToDos: React.Dispatch<React.SetStateAction<string>>;
 };
 export { ToDoStore, Provider, useToDoContext };

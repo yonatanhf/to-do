@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable import/extensions */
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
@@ -10,8 +11,8 @@ interface ToDoType {
 const App: React.FunctionComponent = () => {
   const [toDoList, setToDoList] = useState([]);
   const [show, showToDos] = useState('all');
-  const toDo = (value: string): any => setToDoList([{ value, completed: false }, ...toDoList]);
-  const removeToDo = (value: string): any => {
+  const toDo = (newToDoElement: ToDoType[]) => setToDoList([...newToDoElement, ...toDoList]);
+  const removeToDo = (value: string) => {
     const tmpToDoList: ToDoType[] = [];
     setToDoList((oldList: ToDoType[]) => {
       oldList.forEach((el: ToDoType) => {

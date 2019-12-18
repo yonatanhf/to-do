@@ -5,7 +5,7 @@ import { useToDoContext } from '../../store/index';
 import Button from '../Button/Button';
 import './list.css';
 
-interface Element {
+interface ToDoElementType {
   value: string;
   completed: boolean;
   onDelete: Function;
@@ -13,9 +13,9 @@ interface Element {
   show: string;
 }
 
-const ToDoElement: React.FC<Element> = ({
+const ToDoElement: React.FC<ToDoElementType> = ({
   value, completed, onDelete, onComplete,
-}: Element) => {
+}: ToDoElementType) => {
   const [deleteStatus, setDeleteStatus] = useState(false);
   const animationDelay = 500;
   return (
@@ -40,11 +40,11 @@ const List: React.FunctionComponent = () => {
   return (
     <div id="to-do-lists">
       <div id="input-elements">
-        <input type="text" id="todo-input" value={inputValue} onChange={(e: React.ChangeEvent<HTMLInputElement>): any => { setInputValue(e.target.value); }} />
-        <Button id="add-list-button" label="Add" onclick={() => { setToDoList(inputValue); setInputValue(''); showToDos('all'); }} />
+        <input type="text" id="todo-input" value={inputValue} onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setInputValue(e.target.value); }} />
+        <Button id="add-list-button" label="Add" onclick={() => { setToDoList([{ value: inputValue, completed: false }]); setInputValue(''); showToDos('all'); }} />
       </div>
       <div id="todo-list-elements">
-        {toDoList.length > 0 && toDoList.map((el: Element) => {
+        {toDoList.length > 0 && toDoList.map((el: ToDoElementType) => {
           const toDo: JSX.Element = <ToDoElement key={el.value} value={el.value} completed={el.completed} show={show} onDelete={removeToDo} onComplete={setToDoComplete} />;
           return (
             (show === 'all' && toDo)
