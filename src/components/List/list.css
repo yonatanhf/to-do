@@ -18,7 +18,7 @@
 }
 .todo-element{
     display: grid;
-    grid-template-columns: 9fr 1fr;   
+    grid-template-columns: 9fr 1fr;  
 }
 @keyframes slidein {
     from {

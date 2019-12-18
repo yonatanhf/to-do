@@ -11,5 +11,7 @@ const useToDoContext: any = () => useContext(ToDoStore) as {
   setToDoList: React.Dispatch<React.SetStateAction<ListType>>;
   removeToDo: React.Dispatch<React.SetStateAction<ListType>>;
   setToDoComplete: React.Dispatch<React.SetStateAction<ListType>>;
+  show: string;
+  showToDos: React.Dispatch<React.SetStateAction<ListType>>;
 };
 export { ToDoStore, Provider, useToDoContext };

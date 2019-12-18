@@ -9,6 +9,7 @@ interface ToDoType {
 }
 const App: React.FunctionComponent = () => {
   const [toDoList, setToDoList] = useState([]);
+  const [show, showToDos] = useState('all');
   const toDo = (value: string): any => setToDoList([{ value, completed: false }, ...toDoList]);
   const removeToDo = (value: string): any => {
     const tmpToDoList: ToDoType[] = [];
@@ -36,7 +37,7 @@ const App: React.FunctionComponent = () => {
   };
   return (
     <Provider value={{
-      toDoList, setToDoList: toDo, removeToDo, setToDoComplete,
+      toDoList, setToDoList: toDo, removeToDo, setToDoComplete, show, showToDos,
     }}
     >
       <List />

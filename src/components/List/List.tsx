@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable import/extensions */
 import React, { useState } from 'react';
 import { useToDoContext } from '../../store/index';
@@ -9,6 +10,7 @@ interface Element {
   completed: boolean;
   onDelete: Function;
   onComplete: Function;
+  show: string;
 }
 
 const ToDoElement: React.FC<Element> = ({
@@ -24,31 +26,36 @@ const ToDoElement: React.FC<Element> = ({
           {' '}
         </span>
       </span>
-      <Button id={value} label={completed === false ? 'X' : '✓'} onclick={(): any => { setDeleteStatus(true); setTimeout(() => onDelete(value), 500); }} />
+      <Button id={value} label={completed === false ? 'X' : '✓'} onclick={() => { setDeleteStatus(true); setTimeout(() => onDelete(value), 500); }} />
     </div>
   );
 };
 
 const List: React.FunctionComponent = () => {
   const {
-    toDoList, setToDoList, removeToDo, setToDoComplete,
+    toDoList, setToDoList, removeToDo, setToDoComplete, show, showToDos,
   } = useToDoContext();
   const [inputValue, setInputValue] = useState('');
   return (
     <div id="to-do-lists">
       <div id="input-elements">
         <input type="text" id="todo-input" value={inputValue} onChange={(e: React.ChangeEvent<HTMLInputElement>): any => { setInputValue(e.target.value); }} />
-        <Button id="add-list-button" label="Add" onclick={(): any => { setToDoList(inputValue); setInputValue(''); }} />
+        <Button id="add-list-button" label="Add" onclick={() => { setToDoList(inputValue); setInputValue(''); showToDos('all'); }} />
       </div>
       <div id="todo-list-elements">
-        {toDoList.length > 0 && toDoList.map((el: Element) => (
-          <ToDoElement key={el.value} value={el.value} completed={el.completed} onDelete={removeToDo} onComplete={setToDoComplete} />
-        ))}
+        {toDoList.length > 0 && toDoList.map((el: Element) => {
+          const toDo: JSX.Element = <ToDoElement key={el.value} value={el.value} completed={el.completed} show={show} onDelete={removeToDo} onComplete={setToDoComplete} />;
+          return (
+            (show === 'all' && toDo)
+             || (show === 'incomplete' && (el.completed === false) && toDo)
+                || (show === 'completed' && (el.completed === true) && toDo)
+          );
+        })}
       </div>
       <div id="todo-list-options">
-        <Button id="all-list-button" label="All" onclick={() => {}} />
-        <Button id="complete-list-button" label="Complete" onclick={() => {}} />
-        <Button id="incomplete-list-button" label="Incomplete" onclick={() => {}} />
+        <Button id="all-list-button" label="All" onclick={() => { showToDos('all'); }} />
+        <Button id="complete-list-button" label="Complete" onclick={() => { showToDos('completed'); }} />
+        <Button id="incomplete-list-button" label="Incomplete" onclick={() => { showToDos('incomplete'); }} />
       </div>
     </div>
   );
