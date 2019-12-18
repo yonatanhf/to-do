@@ -24,13 +24,13 @@ const App: React.FunctionComponent = () => {
   };
 
 
-  const setToDoComplete = (value: any) => {
+  const setToDoComplete = (value: string, completed: boolean) => {
     const tmpToDoList: ToDoType[] = [];
     setToDoList((oldList: ToDoType[]) => {
       oldList.forEach((el: ToDoType) => {
         if (el.value !== value) {
           tmpToDoList.push(el);
-        } else { tmpToDoList.push({ value: el.value, completed: true }); }
+        } else { tmpToDoList.push({ value: el.value, completed }); }
       });
       return tmpToDoList;
     });

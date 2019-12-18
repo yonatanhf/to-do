@@ -20,7 +20,7 @@ const ToDoElement: React.FC<Element> = ({
   const animationDelay = 500;
   return (
     <div className="todo-element">
-      <span className={deleteStatus === false ? 'todo-element-label-in' : 'todo-element-label-out'} onKeyDown={() => onComplete(value)} onClick={() => onComplete(value)}>
+      <span className={deleteStatus === false ? 'todo-element-label-in' : 'todo-element-label-out'} onKeyDown={() => onComplete(value, !completed)} onClick={() => onComplete(value, !completed)}>
         <span>
           {' '}
           {value}
