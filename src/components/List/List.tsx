@@ -17,6 +17,7 @@ const ToDoElement: React.FC<Element> = ({
   value, completed, onDelete, onComplete,
 }: Element) => {
   const [deleteStatus, setDeleteStatus] = useState(false);
+  const animationDelay = 500;
   return (
     <div className="todo-element">
       <span className={deleteStatus === false ? 'todo-element-label-in' : 'todo-element-label-out'} onKeyDown={() => onComplete(value)} onClick={() => onComplete(value)}>
@@ -26,7 +27,7 @@ const ToDoElement: React.FC<Element> = ({
           {' '}
         </span>
       </span>
-      <Button id={value} label={completed === false ? 'X' : '✓'} onclick={() => { setDeleteStatus(true); setTimeout(() => onDelete(value), 500); }} />
+      <Button id={value} label={completed === false ? 'X' : '✓'} onclick={() => { setDeleteStatus(true); setTimeout(() => onDelete(value), animationDelay); }} />
     </div>
   );
 };

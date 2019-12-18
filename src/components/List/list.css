@@ -1,81 +1,82 @@
 #to-do-lists {
-    width: 300px;
-    min-height: 100px;
-    position: absolute;
-    padding: 4%;
-    left: 50%;
-    top: 50%;
-    border-radius: 20px;
-    transform: translate(-50%, -50%);
-    background-color: #FFFEFF;
-    color: #93D7B7;
-    display: grid;
-    grid-template-rows: 1fr 4fr 1fr;
+  width: 250px;
+  min-height: 100px;
+  position: absolute;
+  padding: 4%;
+  left: 50%;
+  top: 50%;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  background-color: #fffeff;
+  color: #93d7b7;
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
 }
-#input-elements{
-    display: grid;
-    grid-template-columns: 4fr 1fr;
+#input-elements {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
 }
-.todo-element{
-    display: grid;
-    grid-template-columns: 9fr 1fr;  
+.todo-element {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
 }
 @keyframes slidein {
-    from {
-      margin-left: 80px;
-      width: 80px; 
-    }
-  
-    to {
-      margin-left: 0px;
-      width: 0px;
-    }
+  from {
+    margin-left: 80px;
+    width: 80px;
+  }
+
+  to {
+    margin-left: 0px;
+    width: 0px;
+  }
 }
 @keyframes slideout {
-    from {
-      margin-left: 0px;
-      width: 0px;
-    }
-    to {
-      margin-left: 80px;
-      width: 80px; 
-    }
-  
+  from {
+    margin-left: 0px;
+    width: 0px;
+  }
+  to {
+    margin-left: 80px;
+    width: 80px;
+  }
 }
 .todo-element-label-in {
-    animation-duration: 0.5s;
-    animation-name:slidein;
+  animation-duration: 0.5s;
+  animation-name: slidein;
 }
 .todo-element-label-out {
-    animation-duration: 0.5s;
-    animation-name:slideout;
+  animation-duration: 0.5s;
+  animation-name: slideout;
 }
-.todo-element-label-in:hover{
-    text-decoration:underline;
-    cursor: pointer;
+.todo-element-label-in:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
-#todo-list-options{
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
-    padding-top: 2%;
-    grid-column-gap: 3%;
+#todo-list-options {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  padding-top: 2%;
+  grid-column-gap: 3%;
 }
 
 input {
-    height: 24px;
-    border-radius: 10px;
-    border-color: #93D7B7;
-    margin-right: 10%;
+  height: 40px;
+  border-radius: 20px;
+  border-color: #93d7b7;
+  margin-right: 10%;
+  font-size: 105%;
 }
-button{
-    height: 30px;
-    border-radius: 10px;
-    border-color: #93D7B7;
-    color: #93D7B7;
+button {
+  height: 45px;
+  border-radius: 18px;
+  border-color: #93d7b7;
+  color: #93d7b7;
 }
 button:hover {
-    background-color: #93D7B7; 
-    color: #FFFEFF}
+  background-color: #93d7b7;
+  color: #fffeff;
+}
 button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
