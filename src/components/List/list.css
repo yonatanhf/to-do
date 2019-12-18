@@ -82,3 +82,24 @@ button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+/* ----------- iPhone 4 and 4S ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  #to-do-lists {
+    width: 200px;
+    min-height: 70px;
+  }
+  #input-elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .todo-element {
+    grid-template-columns: 4fr 1fr;
+  }
+  #todo-list-options {
+    grid-template-columns: 1fr 1.3fr 1.3fr;
+    padding-top: 1%;
+    grid-column-gap: 1%;
+  }
+}
