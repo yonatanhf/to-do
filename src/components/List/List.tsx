@@ -41,7 +41,7 @@ const List: React.FunctionComponent = () => {
     <div id="to-do-lists">
       <div id="input-elements">
         <input type="text" id="todo-input" value={inputValue} onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setInputValue(e.target.value); }} />
-        <Button id="add-list-button" label="Add" onclick={() => { setToDoList([{ value: inputValue, completed: false }]); setInputValue(''); showToDos('all'); }} />
+        <Button id="add-list-button" label="Add" onclick={() => { (inputValue !== '') && setToDoList([{ value: inputValue, completed: false }]); setInputValue(''); showToDos('all'); }} />
       </div>
       <div id="todo-list-elements">
         {toDoList.length > 0 && toDoList.map((el: ToDoElementType) => {
