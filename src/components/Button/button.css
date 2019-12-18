@@ -2,3 +2,10 @@
   font-weight: bold;
   height: 40px;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .button {
+    font-weight: bold;
+    height: 30px;
+    margin-top: 10px;
+  }
+}
