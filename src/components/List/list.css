@@ -10,7 +10,7 @@
   background-color: #fffeff;
   color: #93d7b7;
   display: grid;
-  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-rows: auto minmax(100px, auto) auto;
 }
 #input-elements {
   display: grid;
@@ -97,7 +97,7 @@ button:active {
     background-color: #fffeff;
     color: #93d7b7;
     display: grid;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: auto minmax(30%, auto) auto;
   }
   #input-elements {
     margin-left: 15%;
