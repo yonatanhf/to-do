@@ -27,7 +27,10 @@ const ToDoElement: React.FC<ToDoElementType> = ({
           {' '}
         </span>
       </span>
-      <Button id={value} label={completed === false ? 'X' : '✓'} onclick={() => { setDeleteStatus(true); setTimeout(() => onDelete(value), animationDelay); }} />
+      <span id={value} className="spanButton" onClick={() => { setDeleteStatus(true); setTimeout(() => onDelete(value), animationDelay); }}>
+        {completed === false ? 'X' : '✓'}
+        {' '}
+      </span>
     </div>
   );
 };

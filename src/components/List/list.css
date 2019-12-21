@@ -1,8 +1,8 @@
 #to-do-lists {
-  width: 250px;
+  min-width: 250px;
   min-height: 100px;
   position: absolute;
-  padding: 4%;
+  padding: 1rem;
   left: 50%;
   top: 50%;
   border-radius: 20px;
@@ -10,15 +10,28 @@
   background-color: #fffeff;
   color: #93d7b7;
   display: grid;
-  grid-template-rows: auto minmax(100px, auto) auto;
+  grid-template-rows: auto minmax(100px, auto) minmax(45px, 45px);
 }
 #input-elements {
   display: grid;
   grid-template-columns: 4fr 1fr;
+  margin-bottom: 10px;
 }
 .todo-element {
   display: grid;
-  grid-template-columns: 6fr 1fr;
+  grid-template-columns: 77% 1fr;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.spanButton {
+  border: 2px solid;
+  margin-left: 2em;
+  border-radius: 2rem;
+  border-color: #93d7b7;
+  height: 16px;
+  width: 16px;
+  text-align: center;
+  padding: 2px;
 }
 @keyframes slidein {
   from {
@@ -61,17 +74,25 @@
 }
 
 input {
-  height: 40px;
+  font-size: 14px;
+  margin: 0 0.5rem 0 0;
+  border-radius: 2rem;
+  border-style: solid;
+  padding: 0.75em 1.5rem;
   border-radius: 20px;
   border-color: #93d7b7;
-  margin-right: 10%;
-  font-size: 105%;
+}
+input:focus {
+  outline: none;
 }
 button {
-  height: 45px;
   border-radius: 18px;
   border-color: #93d7b7;
   color: #93d7b7;
+  font-size: 14px;
+  border-radius: 2rem;
+  cursor: pointer;
+  background: none;
 }
 button:hover {
   background-color: #93d7b7;
@@ -86,10 +107,9 @@ button:active {
 /* ----------- iPhone 4 and 4S ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   #to-do-lists {
-    max-width: 70%;
     min-height: 40%;
     position: absolute;
-    padding: 1%;
+    padding: 1rem;
     left: 50%;
     top: 50%;
     border-radius: 20px;
@@ -97,35 +117,30 @@ button:active {
     background-color: #fffeff;
     color: #93d7b7;
     display: grid;
-    grid-template-rows: auto minmax(30%, auto) auto;
+    grid-template-rows: auto minmax(50%, auto) minmax(1rem, auto);
   }
   #input-elements {
-    margin-left: 15%;
     text-align: center;
-    max-width: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   #todo-list-options {
-    margin-left: 10%;
-    max-width: 70%;
+    height: 50px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   input {
-    height: 40px;
-    min-width: 100%;
-    border-radius: 20px;
+    padding: 0.2em 1.5rem;
     border-color: #93d7b7;
     font-size: 80%;
-    margin-top: 10px;
+    margin-bottom: 7px;
+    height: 25px;
+    margin-left: -10px;
   }
   .todo-element {
     grid-template-columns: 3fr 1fr;
-    margin-left: 15%;
-    margin-right: 15%;
   }
 }
