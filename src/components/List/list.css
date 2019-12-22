@@ -128,6 +128,7 @@ button:active {
   }
 
   #todo-list-options {
+    margin-bottom: -25px;
     height: 50px;
     display: flex;
     flex-wrap: nowrap;
