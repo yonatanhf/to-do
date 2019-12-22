@@ -10,7 +10,7 @@ interface ToDoType {
 }
 const App: React.FunctionComponent = () => {
   const [toDoList, setToDoList] = useState([]);
-  const [show, showToDos] = useState('all');
+  const [show, showToDos] = useState('All');
   const toDo = (newToDoElement: ToDoType[]) => setToDoList([...newToDoElement, ...toDoList]);
   const removeToDo = (value: string) => {
     const tmpToDoList: ToDoType[] = [];

@@ -87,6 +87,7 @@ input:focus {
 }
 button {
   border-radius: 18px;
+  border: 2px solid;
   border-color: #93d7b7;
   color: #93d7b7;
   font-size: 14px;
