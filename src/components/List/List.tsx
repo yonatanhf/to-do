@@ -59,6 +59,13 @@ const List: React.FunctionComponent = () => {
     setInputValue(e.target.value);
   };
 
+  const handleEnterKey = (e: any) => {
+    if (e.keyCode === 13 || e.which === 13) {
+      e.preventDefault();
+      clickEvent();
+    }
+  };
+
   const displayElement = (value: string, isCompleted: boolean, showStatus: string): JSX.Element => (
     <ToDoElement key={value} value={value} completed={isCompleted} show={showStatus} onDelete={removeToDo} onComplete={setToDoComplete} />);
 
@@ -70,7 +77,7 @@ const List: React.FunctionComponent = () => {
   return (
     <div id="to-do-lists">
       <div id="input-elements">
-        <input type="text" id="todo-input" value={inputValue} onChange={changeEvent} />
+        <input type="text" id="todo-input" value={inputValue} onChange={changeEvent} onKeyPress={handleEnterKey} />
         <Button id="add-list-button" label="Add" onclick={clickEvent} />
       </div>
       <div id="todo-list-elements">
