@@ -35,15 +35,15 @@ $ npm run lint:fix
 
 - To add into the todo list
 
-  ![]:[add-todo]
+  ![][add-todo]
 
 * To set from todo list into complete or incomplete
 
-  ![]:[set-complete]
+  ![][set-complete]
 
 * To remove from the todo list
 
-  ![]:[remove-todo]
+  ![][remove-todo]
 
 - [Live App @ Netlify](https://infallible-hypatia-825bb2.netlify.com)
 
