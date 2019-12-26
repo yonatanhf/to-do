@@ -35,20 +35,16 @@ $ npm run lint:fix
 
 - To add into the todo list
 
-  ![][add-todo]
+  ![add-todo](https://github.com/yonatanhf/to-do/tree/master/src/docs/demo/add-todo-list.gif)
 
-* To set from todo list into complete or incomplete
+- To set from todo list into complete or incomplete
 
-  ![][set-complete]
+  ![set-complete](https://github.com/yonatanhf/to-do/tree/master/src/docs/demo/set-complete-incomplete.gif)
 
-* To remove from the todo list
+- To remove from the todo list
 
-  ![][remove-todo]
+  ![remove-todo](https://github.com/yonatanhf/to-do/tree/master/src/docs/demo/remove-todo.gif)
 
 - [Live App @ Netlify](https://infallible-hypatia-825bb2.netlify.com)
 
 <!-- Demo Images -->
-
-[add-todo]: https://github.com/yonatanhf/to-do/tree/master/src/docs/demo/add-todo-list.gif
-[set-complete]: https://github.com/yonatanhf/to-do/tree/master/src/docs/demo/set-complete-incomplete.gif
-[remove-todo]: https://github.com/yonatanhf/to-do/tree/master/src/docs/demo/remove-todo.gif
