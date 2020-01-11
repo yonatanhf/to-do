@@ -11,7 +11,8 @@ interface ToDoType {
 const App: React.FunctionComponent = () => {
   const [toDoList, setToDoList] = useState([]);
   const [show, showToDos] = useState('All');
-  const toDo = (newToDoElement: ToDoType[]) => setToDoList([...newToDoElement, ...toDoList]);
+  const toDoExists = (toDoElement: ToDoType) => toDoList.some((el: ToDoType) => el.value === toDoElement.value);
+  const toDo = (newToDoElement: ToDoType[]) => !toDoExists(newToDoElement[0]) && setToDoList([...newToDoElement, ...toDoList]);
   const removeToDo = (value: string) => {
     const tmpToDoList: ToDoType[] = [];
     setToDoList((oldList: ToDoType[]) => {

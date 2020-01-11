@@ -1,4 +1,6 @@
-`
+### To-do app:
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) ![npm type definitions](https://img.shields.io/npm/types/@types/react)![GitHub top language](https://img.shields.io/github/languages/top/yonatanhf/to-do)![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/yonatanhf/to-do/dev/@babel/preset-react/master)![GitHub contributors](https://img.shields.io/github/contributors/yonatanhf/to-do)![GitHub last commit](https://img.shields.io/github/last-commit/yonatanhf/to-do)
 
 ## Table of contents
 
@@ -17,7 +19,6 @@ Project is created with:
 
 - ReactJS 16.8
 - HTML, CSS, TypeScript
-- Helpful development libraries: eslint, webpack and babel
 
 ## Setup
 
@@ -33,18 +34,6 @@ $ npm run lint:fix
 
 ## Demo
 
-- To add into the todo list
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7e431908-614a-4436-b11b-c412d9baec1d/deploy-status)](https://app.netlify.com/sites/infallible-hypatia-825bb2/deploys)
 
-  ![add-todo](https://github.com/yonatanhf/to-do/tree/master/src/docs/demo/add-todo-list.gif)
-
-- To set from todo list into complete or incomplete
-
-  ![set-complete](https://github.com/yonatanhf/to-do/tree/master/src/docs/demo/set-complete-incomplete.gif)
-
-- To remove from the todo list
-
-  ![remove-todo](https://github.com/yonatanhf/to-do/tree/master/src/docs/demo/remove-todo.gif)
-
-- [Live App @ Netlify](https://infallible-hypatia-825bb2.netlify.com)
-
-<!-- Demo Images -->
+[Check the app here](https://infallible-hypatia-825bb2.netlify.com)

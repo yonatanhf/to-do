@@ -12,17 +12,20 @@
   display: grid;
   grid-template-rows: auto minmax(100px, auto) minmax(45px, 45px);
 }
+
 #input-elements {
   display: grid;
   grid-template-columns: 4fr 1fr;
   margin-bottom: 10px;
 }
+
 .todo-element {
   display: grid;
   grid-template-columns: 77% 1fr;
   padding: 5px;
   margin-bottom: 5px;
 }
+
 .spanButton {
   cursor: pointer;
   border: 2px solid;
@@ -34,6 +37,7 @@
   text-align: center;
   padding: 2px;
 }
+
 @keyframes slidein {
   from {
     margin-left: 80px;
@@ -45,28 +49,34 @@
     width: 0px;
   }
 }
+
 @keyframes slideout {
-  from {
-    margin-left: 0px;
-    width: 0px;
+  0% {
+    -webkit-transform: translateX(10);
+    transform: translateX(10);
   }
-  to {
-    margin-left: 80px;
-    width: 80px;
+
+  100% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
   }
 }
+
 .todo-element-label-in {
   animation-duration: 0.5s;
   animation-name: slidein;
 }
+
 .todo-element-label-out {
   animation-duration: 0.5s;
   animation-name: slideout;
 }
+
 .todo-element-label-in:hover {
   text-decoration: underline;
   cursor: pointer;
 }
+
 #todo-list-options {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
@@ -81,11 +91,14 @@ input {
   border-style: solid;
   padding: 0.75em 1.5rem;
   border-radius: 20px;
+  border-width: 1px;
   border-color: #93d7b7;
 }
+
 input:focus {
   outline: none;
 }
+
 button {
   border-radius: 18px;
   border: 2px solid;
@@ -96,10 +109,12 @@ button {
   cursor: pointer;
   background: none;
 }
+
 button:hover {
   background-color: #93d7b7;
   color: #fffeff;
 }
+
 button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
@@ -121,6 +136,7 @@ button:active {
     display: grid;
     grid-template-rows: auto minmax(50%, auto) minmax(1rem, auto);
   }
+
   #input-elements {
     text-align: center;
     display: flex;
@@ -135,6 +151,7 @@ button:active {
     flex-wrap: nowrap;
     justify-content: space-evenly;
   }
+
   input {
     padding: 0.2em 1.5rem;
     border-color: #93d7b7;
@@ -143,6 +160,7 @@ button:active {
     height: 25px;
     margin-left: -10px;
   }
+
   .todo-element {
     grid-template-columns: 3fr 1fr;
   }

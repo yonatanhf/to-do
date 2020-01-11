@@ -1,10 +1,15 @@
 .button {
   font-weight: bold;
   height: 40px;
+  min-width: 60px;
+  font-weight: normal;
+  border-width: 1px;
 }
+
 .button:focus {
   outline: 0;
 }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .button {
     font-weight: bold;
