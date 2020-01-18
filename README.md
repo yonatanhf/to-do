@@ -42,23 +42,21 @@ $ npm run lint:fix
 
 * App:
 
-{% file src=".gitbook/assets/landing\_page\_desktop.png" caption="landing page, desktop version" %}
+![Landing page, desktop version](.gitbook/assets/landing_page_desktop.png)
 
-{% file src=".gitbook/assets/landing\_page\_mobile.png" caption="landing page, mobile version" %}
-
-{% file src=".gitbook/assets/todo-values-inputed.png" caption="adding to dos to list" %}
+![mobile version](.gitbook/assets/landing_page_mobile.png)
 
 * All to dos:
 
-{% file src=".gitbook/assets/screenshot-2020-01-18-at-20.04.41.png" caption="display all to dos" %}
+![display all to dos](.gitbook/assets/screenshot-2020-01-18-at-20.04.41.png)
 
 * Completed to dos:
 
-{% file src=".gitbook/assets/screenshot-2020-01-18-at-20.05.02.png" caption="display all completed to dos" %}
+![display completed to dos](.gitbook/assets/screenshot-2020-01-18-at-20.05.02.png)
 
 * Incomplete to dos:
 
-{% file src=".gitbook/assets/screenshot-2020-01-18-at-20.05.14.png" caption="all in-completed to dos" %}
+![display incomplete to dos](.gitbook/assets/screenshot-2020-01-18-at-20.05.14.png)
 
 
 
