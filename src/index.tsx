@@ -2,9 +2,11 @@
 /* eslint-disable import/extensions */
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import ReactGA from 'react-ga';
 import List from './components/List/List';
 import { Provider } from './store/index';
 
+ReactGA.initialize('todo-analytics');
 interface ToDoType {
   value: string; completed: boolean;
 }
@@ -25,8 +27,16 @@ const App: React.FunctionComponent = () => {
     });
   };
 
+  const Event: any = (category: string, action: string, label: string) => {
+    ReactGA.event({
+      category,
+      action,
+      label,
+    });
+  };
 
   const setToDoComplete = (value: string, completed: boolean) => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
     const tmpToDoList: ToDoType[] = [];
     setToDoList((oldList: ToDoType[]) => {
       oldList.forEach((el: ToDoType) => {

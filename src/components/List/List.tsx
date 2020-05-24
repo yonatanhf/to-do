@@ -11,6 +11,7 @@ interface ToDoElementType {
   onDelete: Function;
   onComplete: Function;
   show: string;
+  Event: Function;
 }
 
 const ToDoElement: React.FC<ToDoElementType> = ({
@@ -67,7 +68,7 @@ const List: React.FunctionComponent = () => {
   };
 
   const displayElement = (value: string, isCompleted: boolean, showStatus: string): JSX.Element => (
-    <ToDoElement key={value} value={value} completed={isCompleted} show={showStatus} onDelete={removeToDo} onComplete={setToDoComplete} />);
+    <ToDoElement key={value} value={value} completed={isCompleted} show={showStatus} onDelete={removeToDo} onComplete={setToDoComplete} Event={Event} />);
 
   const displayToDo = (value: string, isCompleted: boolean, showStatus: string) => (
     (showStatus === all && displayElement(value, isCompleted, showStatus))
