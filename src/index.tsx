@@ -6,7 +6,7 @@ import ReactGA from 'react-ga';
 import List from './components/List/List';
 import { Provider } from './store/index';
 
-ReactGA.initialize('todo-analytics');
+ReactGA.initialize('UA-167443301-1');
 interface ToDoType {
   value: string; completed: boolean;
 }
