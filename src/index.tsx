@@ -10,6 +10,15 @@ ReactGA.initialize('todo-analytics');
 interface ToDoType {
   value: string; completed: boolean;
 }
+
+const Event: any = (category: string, action: string, label: string) => {
+  ReactGA.event({
+    category,
+    action,
+    label,
+  });
+};
+
 const App: React.FunctionComponent = () => {
   const [toDoList, setToDoList] = useState([]);
   const [show, showToDos] = useState('All');
@@ -27,13 +36,6 @@ const App: React.FunctionComponent = () => {
     });
   };
 
-  const Event: any = (category: string, action: string, label: string) => {
-    ReactGA.event({
-      category,
-      action,
-      label,
-    });
-  };
 
   const setToDoComplete = (value: string, completed: boolean) => {
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -49,7 +51,7 @@ const App: React.FunctionComponent = () => {
   };
   return (
     <Provider value={{
-      toDoList, setToDoList: toDo, removeToDo, setToDoComplete, show, showToDos,
+      toDoList, setToDoList: toDo, removeToDo, setToDoComplete, show, showToDos, Event,
     }}
     >
       <List />
